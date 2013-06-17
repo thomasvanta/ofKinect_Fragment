@@ -2,13 +2,13 @@
     <Kind>6</Kind>
     <Name>DEPTH RANGE</Name>
     <HighValue>255.000000000</HighValue>
-    <LowValue>196.930694580</LowValue>
+    <LowValue>183.044555664</LowValue>
 </Widget>
 <Widget>
     <Kind>6</Kind>
     <Name>BLOB SIZE</Name>
-    <HighValue>130027.726562500</HighValue>
-    <LowValue>84403.960937500</LowValue>
+    <HighValue>153600.000000000</HighValue>
+    <LowValue>29655.445312500</LowValue>
 </Widget>
 <Widget>
     <Kind>2</Kind>
@@ -18,7 +18,7 @@
 <Widget>
     <Kind>4</Kind>
     <Name>MOTOR ANGLE</Name>
-    <Value>-8.316831589</Value>
+    <Value>-7.425743103</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
