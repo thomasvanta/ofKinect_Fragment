@@ -1,6 +1,7 @@
 
-uniform float time;
-uniform vec2 resolution;
+uniform float iGlobalTime;
+uniform vec2 iResolution;
+uniform sampler2D iChannel0;
 
 void main(void)
 {

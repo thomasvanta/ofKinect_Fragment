@@ -15,21 +15,6 @@
 #include "ofxSimpleMask.h"
 #include "ofxUI.h"
 
-/*
-#include "MSAFluid.h"
-//#include "MSATimer.h"
-#include "ParticleSystem.h"
-
-#define USE_GUI		
-
-#ifdef USE_GUI 
-#include "ofxSimpleGuiToo.h"
-#endif
-*/
-
-// uncomment this to read from two kinects simultaneously
-//#define USE_TWO_KINECTS
-
 class testApp : public ofBaseApp {
 public:
 	
@@ -47,7 +32,6 @@ public:
 	void windowResized(int w, int h);
     
     void setup_ofxUI() ;
-	//ofColor color1, color2, color3;
 	
 	ofxKinect kinect;
 	
@@ -85,27 +69,8 @@ public:
     ofFbo shaderFbo ;
     ofFbo maskFbo ;
 	int timeSpeed;
+	int blur, thres;
 	float getTime(int);
 	
-	//vector<ofVec2f*> vertices;
-	/*
-	void fadeToColor(float r, float g, float b, float speed);
-	void addToFluid(ofVec2f pos, ofVec2f vel, bool addColor, bool addForce);
-	
-	float                   colorMult;
-    float                   velocityMult;	
-	int                     fluidCellsX;
-	bool                    resizeFluid;
-	bool                    drawFluid;
-	bool                    drawParticles;
-	
-	msa::fluid::Solver      fluidSolver;
-	msa::fluid::DrawerGl	fluidDrawer;
-	
-	ParticleSystem          particleSystem;
-	
-	ofVec2f                 pMouse;
-
-	 */
-    
+	ofImage img;
 };

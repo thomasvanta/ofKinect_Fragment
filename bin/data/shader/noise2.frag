@@ -1,5 +1,7 @@
-uniform float time;
- 
+uniform float iGlobalTime;
+uniform vec2 iResolution;
+uniform sampler2D iChannel0;
+
 vec4 mod289(vec4 x)
 {
     return x - floor(x * (1.0 / 289.0)) * 289.0;
@@ -129,14 +131,14 @@ float pattern(in vec2 p) {
     return fbm( p + 5.0*r ,oc,l,g);    
 }
  
-float pattern2( in vec2 p, out vec2 q, out vec2 r , in float time)
+float pattern2( in vec2 p, out vec2 q, out vec2 r , in float iGlobalTime)
 {
     float l = 2.2;
     float g = 0.35;
     int oc = 5; 
      
-    q.x = fbm( p + vec2(time,time),oc,l,g);
-    q.y = fbm( p - vec2(5.2*time,1.3*time) ,oc,l,g); //direction in the sign
+    q.x = fbm( p + vec2(iGlobalTime,iGlobalTime),oc,l,g);
+    q.y = fbm( p - vec2(5.2*iGlobalTime,1.3*iGlobalTime) ,oc,l,g); //direction in the sign
      
     r.x = fbm( p + 4.0*q + vec2(1.7,9.2),oc,l,g );
     r.y = fbm( p + 4.0*q + vec2(8.3,2.8) ,oc,l,g);
@@ -150,7 +152,7 @@ void main() {
     vec2 p = -1.0 + 2.0 * q;
     vec2 qq;
     vec2 r;
-    float color = pattern2(p,qq,r,time);
+    float color = pattern2(p,qq,r,iGlobalTime);
     // float color2 = pattern(p);
      
     vec4 c = vec4(color,color,255,color);

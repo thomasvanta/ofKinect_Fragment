@@ -14,8 +14,9 @@ http://glsl.heroku.com/e#6786.0
 // @eddbiddulph - modulated hexagons by the hexagon shape itself, and added some colour.
 
 
-uniform float time;
-uniform float resolution ; 
+uniform float iGlobalTime;
+uniform vec2 iResolution;
+//uniform sampler2DRect iChannel0;
 
 
 // 1 on edges, 0 in middle
@@ -34,7 +35,7 @@ void main(void) {
 	vec2 pos = gl_FragCoord.xy;
 	vec2 p = pos/40.0; 
 	
-	float d = (hex(pos / 400.0) + time) * 0.4;
+	float d = (hex(pos / 400.0) + iGlobalTime) * 0.4;
 	float df = fract(d);
 	float di = floor(d);
 
